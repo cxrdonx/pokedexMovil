@@ -1,3 +1,15 @@
-.img{
-    width: 400px;
+#poke_img{
+    margin: auto;
+    width: 18%;
+   
+}
+#circle{
+    position: absolute;
+    top: 0px;
+    left: 76px;
+   background-color: #7777;
+   height: 160px;
+   rotate: 180deg;
+   width: 90%;
+   border-radius: 100px 100px 0 0;
 }
