@@ -16,6 +16,7 @@ export class PokeComponent implements OnInit {
     this._petitionsService.getPokemon().subscribe(
         result =>{
            this.pokemon = result;
+           console.log(result);
           
     //Object
         },

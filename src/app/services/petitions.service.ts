@@ -11,6 +11,6 @@ import { Observable } from 'rxjs';
          this.url = "https://pokeapi.co/api/v2/";
       }
       getPokemon(): Observable<any> {
-          return this._http.get(this.url + 'pokemon/25');
-      }
+          return this._http.get(this.url + 'pokemon/18');
   }
+}

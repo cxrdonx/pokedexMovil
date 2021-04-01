@@ -1,13 +1,20 @@
-<p>poke worksss!</p>
-    <div *ngIf ="pokemon">
-          <h1>{{pokemon.name}}</h1>
-          <h1>{{pokemon.weight}}</h1>
-        <img src ="{{pokemon.sprites.other.dream_world.front_default}}" id="poke_img">
-    
-    </div>
-<p>
-    esteselpikachu
-</p>
-    <div id="circle">
-    </div>
 
+<div id="poke-container">
+ 
+    <div *ngIf ="pokemon">
+          
+        <img src ="{{pokemon.sprites.other.dream_world .front_default}}" id="poke_img">
+   
+    </div>
+</div>
+
+<div class="info-container">
+
+    <div class="item1">{{pokemon.name}}</div>
+    <div class="item3">Nº:{{pokemon.id}}</div>
+    <div class="item2">Peso:{{pokemon.weight}}  </div>
+    <div class="item3">Altura:{{pokemon.height}}</div>    
+</div>
+
+
+       
