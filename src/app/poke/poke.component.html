@@ -1,20 +1,33 @@
 
 <div id="poke-container">
  
-    <div *ngIf ="pokemon">
+    
+</div>
+<div *ngIf ="pokemon">
           
-        <img src ="{{pokemon.sprites.other.dream_world .front_default}}" id="poke_img">
-   
-    </div>
+    <img src ="{{pokemon.sprites.other.dream_world.front_default}}" id="poke_img">
+
+</div>
+
+<div class= "dash">
+
 </div>
 
 <div class="info-container">
+    <div class="item1">{{pokemon.name}}</div> 
+    <div class ="item3">Altura: {{pokemon.height}}</div> 
+    <div class="item4">Peso: {{pokemon.weight}}</div>
+    <div class ="item5">{{hability.flavor_text_entries[42].flavor_text}}</div> 
+    <div *ngIf ="types" class ="item6">Tipo: {{types.names[4].name}}</div> 
+ 
 
-    <div class="item1">{{pokemon.name}}</div>
-    <div class="item3">Nº:{{pokemon.id}}</div>
-    <div class="item2">Peso:{{pokemon.weight}}  </div>
-    <div class="item3">Altura:{{pokemon.height}}</div>    
+
+  
+   
 </div>
 
 
-       
+
+
+
+    

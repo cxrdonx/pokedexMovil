@@ -1,10 +1,19 @@
 #poke_img{
     margin-top: -7em;
-    margin-left: 20%;
-    max-width: 55%;
+    margin-left: 33%;   
+    max-width: 39%;
+    min-width: 39%;
     transform: rotate(180deg);
-    
+    animation: beat .7s infinite;
+   
 }
+
+@keyframes beat{
+  from{transform: none;}
+  60%{transform: scale(1.1)}
+  to{transform: none;}
+}
+
 #poke-container{
     background-color: #7777 ;
     border: 1px solid;
@@ -14,43 +23,59 @@
     transform: rotate(180deg);
 }
 
-.item1{
-   margin-top: 68%;
-   margin-bottom: 10%;
-   font-size: 10vmin;
-   grid-column: 2/2;
-   margin-left: -60%;
-   max-width: 100%;
-   text-align: center;
-   background-color: #5dc1cf;
-   border-radius: 10px 10px 10px 10px;   
-
-}
-
-
 .info-container{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1;
     margin-top: 18%;
     margin-left: 8%;
     font-size: 3vmax;
-
-    
+    grid-gap: 6%;
+     grid-template-areas: 
+         "title title "
+         "skill skill "
+         "name  caracter"
+         "name2 caracter2"
 }
 
-.item2,.item3,.item4{
-   width: 99%;
-   margin-left: -8%;
+.item1{
+   font-size: 6.5vmin;
+   grid-area: title;
+   max-width: 90%;
+   height: 33px;
+   text-align: center;
+   background-color: #b5b2b254;
+   border-radius: 10px 10px 10px 10px;  
+}
+.item5{
+    width: 90%;
+    font-size: 5vmin;
+    grid-area: skill;
+}
+.item3{
+    width: 88%;
+      background-color: rgba(218, 216, 216, 0.467);
+      border-radius: 1px 1px 0 0;
+      text-align: center;
+      grid-area: name;
+}
+.item4{
+   width: 88%;
      background-color: rgba(218, 216, 216, 0.467);
-     border-radius: 10px 10px 10px;
+     border-radius: 1px 1px 0 0;
      text-align: center;
+     grid-area: caracter;
 }
 
-.item1, .item3{
-    border-left-color:midnightblue;
-    border-left: 2px solid;
-}
+.item6{
+    width: 88%;
+      background-color: rgba(218, 216, 216, 0.467);
+      border-radius: 1px 1px 0 0;
+      text-align: center;
+      grid-area: name2;
+ }
+
 
 @media(min-width: 700px ){ 
     #poke_img{
