@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PokeComponent} from './poke/poke.component';
-import {SeekerComponent} from './seeker/seeker.component';
+import {SeekerComponent} from './seeker/seeker.component'; 
 
 const routes: Routes = [
   {path: '', component: PokeComponent},

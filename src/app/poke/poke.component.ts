@@ -18,18 +18,8 @@ export class PokeComponent implements OnInit {
      this.pokemonId = 1;
   }
   ngOnInit() {
-    
     this.getPokemonId();
-
-    this._petitionsService.getHability().subscribe(
-      result =>{
-        this.hability = result;
-  
-      },
-      error =>{
-           console.log(<any>error);
-      }
-    )
+    this.getHability();
 
     this._petitionsService.getTypes().subscribe(
       result =>{
@@ -40,7 +30,6 @@ export class PokeComponent implements OnInit {
            console.log(<any>error);
       }
     )
-    
   }
   getPokemonId(){
   this._petitionsService.getPokemon(this.pokemonId).subscribe(
@@ -51,5 +40,16 @@ export class PokeComponent implements OnInit {
      console.log(<any>error);
     }
 );
+  }
+
+  getHability(){
+    this._petitionsService.getHability(this.pokemonId).subscribe(
+      result =>{
+        this.hability = result;
+      },
+      error =>{
+        console.log(<any>error);
+      }
+    );
   }
 }
