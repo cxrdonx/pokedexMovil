@@ -10,13 +10,13 @@ import { Observable } from 'rxjs';
       ){
          this.url = "https://pokeapi.co/api/v2/";
       }
-      getPokemon(): Observable<any> {
-          return this._http.get(this.url + 'pokemon/1');
-  }
+      getPokemon(pokemonId): Observable<any> {
+          return this._http.get(this.url + 'pokemon/'+pokemonId);
+      }
     getHability(): Observable<any>{
-        return this._http.get(this.url +'pokemon-species/1');
+        return this._http.get(this.url +'pokemon-species/50');
     }
     getTypes(): Observable<any>{
-        return this._http.get(this.url+'type/1');
+        return this._http.get(this.url+'type/50');
     }
 }

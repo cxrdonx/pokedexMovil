@@ -12,19 +12,14 @@ export class PokeComponent implements OnInit {
   public hability: any;
   public pokemon: any;
   public types: any;
+  public pokemonId: any;
 
   constructor(private _petitionsService: PetitionsService){
+     this.pokemonId = 1;
   }
   ngOnInit() {
-    this._petitionsService.getPokemon().subscribe(
-        result =>{
-           this.pokemon = result;
-    //Object
-        },
-       error =>{
-         console.log(<any>error);
-        }
-    )
+    
+    this.getPokemonId();
 
     this._petitionsService.getHability().subscribe(
       result =>{
@@ -47,5 +42,14 @@ export class PokeComponent implements OnInit {
     )
     
   }
-
+  getPokemonId(){
+  this._petitionsService.getPokemon(this.pokemonId).subscribe(
+    result =>{
+       this.pokemon = result;
+    },
+   error =>{
+     console.log(<any>error);
+    }
+);
+  }
 }

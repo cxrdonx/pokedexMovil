@@ -18,12 +18,9 @@
     <div class ="item3">Altura: {{pokemon.height}}</div> 
     <div class="item4">Peso: {{pokemon.weight}}</div>
     <div class ="item5">{{hability.flavor_text_entries[42].flavor_text}}</div> 
-    <div *ngIf ="types" class ="item6">Tipo: {{types.names[4].name}}</div> 
- 
-
-
-  
-   
+ <input type="text" class="item6" [(ngModel)]="pokemonId" (keyup.enter)="getPokemonId()"/>
+    
+     
 </div>
 
 
