@@ -73,6 +73,9 @@ export class PokeComponent implements OnInit {
       this.evolutions = this.evolution.evolution_chain.url;
        this._petitionsService.getEvolution(this.evolutions).subscribe(
     result =>{
+
+      //TODO ESTO MOVERLO AL COMPONENT.HTML PARA COMPROBAR SI ESTAN VACIOS O NO 
+       // O MODIFICAR SOLO LOS CONSOLE.LOG 
       this.getEvolutions = result;
       this.getEvolutions2 = result;
       this.getEvolutions3 = result;
