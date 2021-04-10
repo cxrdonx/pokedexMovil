@@ -13,15 +13,27 @@
 
 </div>
 
-<div class="info-container">
+<div *ngIf ="pokemon" class="info-container">
     <div class="item1">{{pokemon.name}}</div> 
     <div class ="item3">Altura: {{pokemon.height}}</div> 
     <div class="item4">Peso: {{pokemon.weight}}</div>
     <div class ="item5">{{hability.flavor_text_entries[42].flavor_text}}</div> 
- <input type="text" class="item6" [(ngModel)]="pokemonId" (keyup.enter)="getPokemonId()"/>
+   
+    
+   <!--- <input type="text" class="item6" [(ngModel)]="pokemonId" (keyup.enter)="getPokemonId()"/> -->
+</div>
+
+<div class="type-container">
+    <div class="item8">Type</div>
+    <div class="item9">{{pokemon.types[0].type.name}}</div>
+    <div class="item10">{{pokemon.types[1].type.name}}</div>
+</div>
+
+<div class= "item11">{{getEvolutions.id}}</div>
+      
     
      
-</div>
+
 
 
 
