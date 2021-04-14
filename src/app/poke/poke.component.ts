@@ -19,11 +19,15 @@ export class PokeComponent implements OnInit {
   public getEvolutions:any;
   public getEvolutions2:any;
   public getEvolutions3:any;
+  public allEvollutions: any;
+
 
   constructor(private _petitionsService: PetitionsService){
      this.pokemonId = 6;
+
   }
   ngOnInit() {
+    this.seeEvolutions();
    this.getPokemonId();
 
 /*
@@ -51,6 +55,7 @@ export class PokeComponent implements OnInit {
       this._petitionsService.getPokemon(this.pokemonId).subscribe(
         result =>{
            this.pokemon = result;
+           console.log(this.pokemon);
         },
        error =>{
          console.log(<any>error);
@@ -85,19 +90,39 @@ export class PokeComponent implements OnInit {
       console.log(this.getEvolutions);
       console.log(this.getEvolutions2);
       console.log(this.getEvolutions3);
- 
+      console.log(this.evolution);
+        this.seeEvolutions();
     },
-    error =>{
-      console.log(<any>error);
-    }
   )
     },
     error =>{
         console.log(<any>error);
     }
   )
- 
+     
 }
+
+    seeEvolutions(){
+      this._petitionsService.getPokemon(this.pokemonId).subscribe(
+        result =>{
+           this.pokemon = result;
+           console.log(this.pokemon);
+           console.log("probando state caca")
+        },
+       error =>{
+         console.log(<any>error);
+        }
+    );
+    this._petitionsService.getHability(this.pokemonId).subscribe(
+      result =>{
+         this.hability = result;
+      },
+     error =>{
+       console.log(<any>error);
+      }
+  );
+
+   }
    }
 
   
