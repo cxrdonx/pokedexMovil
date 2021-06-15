@@ -9,6 +9,7 @@
       background-color: #fbfbfb;
     }
   </style>
+
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
   <title>Pokedex</title>
   <base href="/">
@@ -19,4 +20,23 @@
   <app-pokedex></app-pokedex>
   <app-root></app-root>
 </body>
+<script src="../node_modules/colorthief/dist/color-thief.umd.js"></script>
+<script>
+const colorThief = new ColorThief();
+ /* myImage=$('#poke_img');
+  dominantColor = getDominantColor("myImage");
+  palete = createPalette(myImage, 10);
+  console.log(palete);
+  */
+ var myImage = document.getElementById('poke_img');
+ const img = resolve(process.cwd(), 'img');
+   if(img.complete){
+     ColorThief.getColor(img);
+   }else{
+     image.addEventListener('load', function(){
+       ColorThief.getColor(img);
+     })
+   }
+</script>
+
 </html>

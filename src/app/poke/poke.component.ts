@@ -23,7 +23,7 @@ export class PokeComponent implements OnInit {
 
 
   constructor(private _petitionsService: PetitionsService){
-     this.pokemonId = 6;
+     this.pokemonId = 462;
 
   }
   ngOnInit() {
@@ -87,10 +87,6 @@ export class PokeComponent implements OnInit {
       this.getEvolutions = this.getEvolutions.chain.evolves_to[0].evolves_to[0].species.name;
       this.getEvolutions2 = this.getEvolutions2.chain.evolves_to[0].species.name;
       this.getEvolutions3 = this.getEvolutions3.chain.species.name;
-      console.log(this.getEvolutions);
-      console.log(this.getEvolutions2);
-      console.log(this.getEvolutions3);
-      console.log(this.evolution);
         this.seeEvolutions();
     },
   )
@@ -101,13 +97,11 @@ export class PokeComponent implements OnInit {
   )
      
 }
-
     seeEvolutions(){
       this._petitionsService.getPokemon(this.pokemonId).subscribe(
         result =>{
            this.pokemon = result;
            console.log(this.pokemon);
-           console.log("probando state caca")
         },
        error =>{
          console.log(<any>error);

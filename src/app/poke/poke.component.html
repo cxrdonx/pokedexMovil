@@ -23,21 +23,20 @@
    <!--- <input type="text" class="item6" [(ngModel)]="pokemonId" (keyup.enter)="getPokemonId()"/> -->
 </div>
 
+<section class="pokemon-type--container">
 <div class="type-container">
-    <div class="item8">Type</div>
+    <div class="item8">Tipo</div>
     <div *ngIf ="pokemon"class="item9">{{pokemon.types[0].type.name}}</div>
     <div *ngIf ="pokemon" class="item10">{{pokemon.types[1].type.name}}</div>
 </div>
-
     <div class ="evolution-container">
         <div>{{getEvolutions}}</div>
         <div>{{getEvolutions2}}</div>
-        <div>{{getEvolutions3}}</div>
-        
-
-    
+        <div>{{getEvolutions3}}</div>   
 </div>
-      
+</section>
+
+
     
      
 
