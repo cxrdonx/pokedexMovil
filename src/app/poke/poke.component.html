@@ -19,26 +19,38 @@
 </div>
 
 <div *ngIf ="pokemon" class="info-container">
-    <div class="item1">{{pokemon.name}}</div> 
-    <div class ="item3">Altura: {{pokemon.height}}</div> 
-    <div class="item4">Peso: {{pokemon.weight}}</div>
-    <div class ="item5">{{hability.flavor_text_entries[42].flavor_text}}</div> 
+    <div *ngIf ="pokemon"class="item1">{{pokemon.name}}</div> 
+    <div *ngIf ="pokemon"class ="item3">Altura: {{pokemon.height}}</div> 
+    <div *ngIf ="pokemon"class="item4">Peso: {{pokemon.weight}}</div>
+    <div *ngIf ="pokemon"class ="item5">{{hability.flavor_text_entries[42].flavor_text}}</div> 
    
     
    <!--- <input type="text" class="item6" [(ngModel)]="pokemonId" (keyup.enter)="getPokemonId()"/> -->
 </div>
 
 <section class="pokemon-type--container">
+  
+    
+
+
 <div class="type-container">
     <div class="item8">Tipo</div>
     <div *ngIf ="pokemon"class="item9">{{pokemon.types[0].type.name}}</div>
     <div *ngIf ="pokemon" class="item10">{{pokemon.types[1].type.name}}</div>
 </div>
     <div class ="evolution-container">
-        <div class="evolution-1">{{getEvolutions}}</div>
+        <img src ="{{pokemon.sprites.back_default}}" class="pokemon-type--icon"/>
+        <div class="evolution-1">
+            <p>{{getEvolutions1}}</p>
+            <img src ="{{getEvolutions.sprites.other.dream_world.front_default}}" class="img"/>
+            
+        </div>
         <div class="evolution-2">{{getEvolutions2}}</div>
         <div class="evolution-3">{{getEvolutions3}}</div>   
 </div>
+<footer>
+
+</footer>
 </section>
 
 

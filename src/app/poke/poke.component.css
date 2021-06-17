@@ -12,21 +12,25 @@ html{
     position: static;
     width: 100%;
     
+    
 }
 
 .header-container .search{
     transform: rotate(180deg);
     margin-top: 120px;
     text-align: center;
+    color:whitesmoke;
+   
   
     
 }
 
 .header-container .search .searchTxt{
-    min-width: 60%;
-    height: 45px;
+    min-width: 50%;
+    height: 30px;
     border-radius: 30px;
     text-align: center;
+
   
 }
 
@@ -61,6 +65,32 @@ html{
     border-radius: 250px 250px 0 0;
     margin-top: -2em;
     transform: rotate(180deg);
+
+}
+
+  .header-container #poke-container, .item1, .header-container .search .searchTxt, .evolution-container{
+    background: linear-gradient(207deg, #0bc8a7, #2776df, #8a27df, #4503f3);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 18s ease infinite;
+    -moz-animation: AnimationName 18s ease infinite;
+    animation: AnimationName 18s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
 }
 
 .info-container{
@@ -83,13 +113,13 @@ html{
 .item1{
    font-size: 1.8rem;
    justify-content: center;
-   text-align: justify;
+   color: whitesmoke;
+   text-align: center;
    grid-area: title;
+   font-weight: bold;
    max-width: 95%;
    height: 33px;
-   margin-left: -2%;
-   text-align: center;
-   background-color: #b5b2b254;
+   margin-left: -2%;  
    border-radius: 10px 10px 10px 10px;  
 }
 .item5{
@@ -110,6 +140,7 @@ html{
    width: 88%;
     /* background-color: rgba(218, 216, 216, 0.467);*/
      border-radius: 1px 1px 0 0;
+     margin-bottom: 40px;
      text-align: center;
      grid-area: caracter;
      max-width: 84%;
@@ -130,27 +161,100 @@ html{
    text-align: center;
   
 }
+
 .type-container .item8{
   width: 20%;
   font-size: 1.8rem;
+  color: whitesmoke;
   min-width: 288px;
     max-width: 900px;
   margin: 0 auto;
-  background-color: beige;
+  background-color: #321466;
+  border-radius: 10px 10px;
 }
 .type-container .item9, .item10{
     margin: 10px auto;
     font-size: 1.2rem;
+    
+
+}
+.type-container, .item10{
+
+    margin-bottom: 150px;
 }
 
 .evolution-container{
- text-align: center;
+    position: relative;
+    width: 100%;
+    min-width: 32px;
+    height: auto;
+    padding: 20px 10px;
+}
+
+.pokemon-type--icon{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -90px;
+    left: calc(40% - 40px);
+   
 }
 
 .evolution-container  .evolution-1, .evolution-2, .evolution-3{
     margin-bottom: 10px;
     font-size: 1.2rem;
+    color: whitesmoke;
 
+}
+
+.evolution-container .evolution-1{
+    text-align: center;
+    width: 90%;
+       min-width: 288px;
+       max-width: 400px;
+       height: 150px;
+       margin: 15px auto;
+       padding: 15px;
+       background-color: #1a0739;
+       border-radius: 5px;
+       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.evolution-container .evolution-2{
+    text-align: center;
+    width: 90%;
+       min-width: 288px;
+       max-width: 400px;
+       height: 150px;
+       margin: 15px auto;
+       padding: 15px;
+       background-color: #1a0739;
+       border-radius: 5px;
+       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.evolution-container .evolution-3{
+    text-align: center;
+    width: 90%;
+       min-width: 288px;
+       max-width: 400px;
+       height: 150px;
+       margin: 15px auto;
+       padding: 15px;
+       background-color: #1a0739;
+       border-radius: 5px;
+       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.evolution-container .evolution-1 .img, .img2, .img3{
+    
+    width: 30%;
+     
+}
+
+footer{
+    width: 100%;
+    height: 240px;
+    background-color: #1a0739;;
 }
 
 /*

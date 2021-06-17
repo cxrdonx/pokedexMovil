@@ -33,4 +33,11 @@ import { ThrowStmt } from '@angular/compiler';
     getEvolution2(getEvolution2:any): Observable<any>{
         return this._http.get(this.url + 'pokemon/'+getEvolution2);
     }
+    getBuscarPokemon1(getEvolutions1:any): Observable<any>{
+        return this._http.get(this.url +'pokemon/'+getEvolutions1);
+    }
+    getBuscarPokemon3(getEvolutions3:any): Observable<any>{
+        return this._http.get(this.url +'pokemon/'+getEvolutions3);
+    }
+
 }

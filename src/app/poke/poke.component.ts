@@ -17,11 +17,13 @@ export class PokeComponent implements OnInit {
   public evolution:any;
   public evolutions:any;
   public getEvolutions:any;
+  public getEvolutions1:any;
   public getEvolutions2:any;
   public getEvolutions3:any;
   public allEvollutions: any;
   public pokemonName: any;
-
+ public prueba: any;
+ public evolucion: any;
 
   constructor(private _petitionsService: PetitionsService){
      this.pokemonId = 5;
@@ -82,13 +84,17 @@ export class PokeComponent implements OnInit {
 
       //TODO ESTO MOVERLO AL COMPONENT.HTML PARA COMPROBAR SI ESTAN VACIOS O NO 
        // O MODIFICAR SOLO LOS CONSOLE.LOG 
-      this.getEvolutions = result;
+      this.getEvolutions1 = result;
       this.getEvolutions2 = result;
       this.getEvolutions3 = result;
-      this.getEvolutions = this.getEvolutions.chain.evolves_to[0].evolves_to[0].species.name;
+
+      this.getEvolutions1 = this.getEvolutions1.chain.evolves_to[0].evolves_to[0].species.name;
       this.getEvolutions2 = this.getEvolutions2.chain.evolves_to[0].species.name;
       this.getEvolutions3 = this.getEvolutions3.chain.species.name;
+      
+        console.log(this.prueba);
         this.seeEvolutions();
+        this.buscarPokemon();
     },
   )
     },
@@ -99,7 +105,7 @@ export class PokeComponent implements OnInit {
      
 }
     seeEvolutions(){
-      this._petitionsService.getPokemon(this.pokemonId).subscribe(
+      this._petitionsService.getPokemon(this.prueba).subscribe(
         result =>{
            this.pokemon = result;
            console.log(this.pokemon);
@@ -120,7 +126,24 @@ export class PokeComponent implements OnInit {
    }
 
    buscarPokemon(){
-
+    this._petitionsService.getPokemon(this.getEvolutions1).subscribe(
+      result =>{
+         this.getEvolutions = result;
+         console.log("EVOLUCION");
+         console.log(this.getEvolutions);
+      },
+     error =>{
+       console.log(<any>error);
+      }
+  );
+  this._petitionsService.getHability(this.prueba).subscribe(
+    result =>{
+       this.hability = result;
+    },
+   error =>{
+     console.log(<any>error);
+    }
+);
    }
 
  
