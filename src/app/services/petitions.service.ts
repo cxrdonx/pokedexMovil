@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LEADING_TRIVIA_CHARS } from '@angular/compiler/src/render3/view/template';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable()
   export class PetitionsService{
@@ -28,5 +29,8 @@ import { LEADING_TRIVIA_CHARS } from '@angular/compiler/src/render3/view/templat
     getEvolution(evolutions:any): Observable<any>{
           return this._http.get(evolutions);
           
+    }
+    getEvolution2(getEvolution2:any): Observable<any>{
+        return this._http.get(this.url + 'pokemon/'+getEvolution2);
     }
 }

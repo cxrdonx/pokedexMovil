@@ -20,16 +20,17 @@ export class PokeComponent implements OnInit {
   public getEvolutions2:any;
   public getEvolutions3:any;
   public allEvollutions: any;
+  public pokemonName: any;
 
 
   constructor(private _petitionsService: PetitionsService){
-     this.pokemonId = 462;
+     this.pokemonId = 5;
 
   }
   ngOnInit() {
     this.seeEvolutions();
    this.getPokemonId();
-
+  this.buscarPokemon();
 /*
    this._petitionsService.getPokemon().subscribe(
     result =>{
@@ -117,6 +118,12 @@ export class PokeComponent implements OnInit {
   );
 
    }
+
+   buscarPokemon(){
+
+   }
+
+ 
    }
 
   

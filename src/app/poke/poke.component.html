@@ -1,13 +1,18 @@
 
+
+<section class="header-container">
 <div id="poke-container">
- 
-    
+    <div class="search">
+        <input type="text" placeholder="Buscar pokemon" class="searchTxt" [(ngModel)]="pokemonId" (keyup.enter)="getPokemonId()"/>
+    </div>
 </div>
-<div *ngIf ="pokemon">
-          
-    <img src ="{{pokemon.sprites.other.dream_world.front_default}}" id="poke_img">
+<div *ngIf ="pokemon" class="">
+          <div class="img-container">
+    <img src ="{{pokemon.sprites.other.dream_world.front_default}}" id="poke_img"/>
+</div>
 
 </div>
+</section>
 
 <div class= "dash">
 
@@ -30,9 +35,9 @@
     <div *ngIf ="pokemon" class="item10">{{pokemon.types[1].type.name}}</div>
 </div>
     <div class ="evolution-container">
-        <div>{{getEvolutions}}</div>
-        <div>{{getEvolutions2}}</div>
-        <div>{{getEvolutions3}}</div>   
+        <div class="evolution-1">{{getEvolutions}}</div>
+        <div class="evolution-2">{{getEvolutions2}}</div>
+        <div class="evolution-3">{{getEvolutions3}}</div>   
 </div>
 </section>
 
