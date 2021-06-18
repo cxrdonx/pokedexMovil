@@ -16,17 +16,20 @@ export class PokeComponent implements OnInit {
   public pokemonId: any;
   public evolution:any;
   public evolutions:any;
-  public getEvolutions:any;
+  public getEvolutionsImage:any;
+  public getEvolutionsImage2:any;
+  public getEvolutionsImage3:any;
   public getEvolutions1:any;
   public getEvolutions2:any;
   public getEvolutions3:any;
   public allEvollutions: any;
   public pokemonName: any;
+  public money: any;
  public prueba: any;
  public evolucion: any;
 
   constructor(private _petitionsService: PetitionsService){
-     this.pokemonId = 5;
+     this.pokemonId = 1;
 
   }
   ngOnInit() {
@@ -66,7 +69,9 @@ export class PokeComponent implements OnInit {
     );
     this._petitionsService.getHability(this.pokemonId).subscribe(
       result =>{
-         this.hability = result;
+      this.hability = result;
+      
+       
       },
      error =>{
        console.log(<any>error);
@@ -79,6 +84,8 @@ export class PokeComponent implements OnInit {
     result =>{
       this.evolution = result;
       this.evolutions = this.evolution.evolution_chain.url;
+      console.log("evolucion 2:::::");
+      console.log(this.evolutions);
        this._petitionsService.getEvolution(this.evolutions).subscribe(
     result =>{
 
@@ -87,20 +94,32 @@ export class PokeComponent implements OnInit {
       this.getEvolutions1 = result;
       this.getEvolutions2 = result;
       this.getEvolutions3 = result;
-
       this.getEvolutions1 = this.getEvolutions1.chain.evolves_to[0].evolves_to[0].species.name;
       this.getEvolutions2 = this.getEvolutions2.chain.evolves_to[0].species.name;
       this.getEvolutions3 = this.getEvolutions3.chain.species.name;
       
-        console.log(this.prueba);
         this.seeEvolutions();
         this.buscarPokemon();
+        this.buscarPokemon2();
+        this.buscarPokemon3();
     },
   )
     },
     error =>{
         console.log(<any>error);
     }
+  )
+
+  this._petitionsService.getPokemon(this.getEvolutions2).subscribe(
+    result=>{
+        this.getEvolutionsImage2 = result;
+    }
+  )
+
+  this._petitionsService.getPokemon(this.getEvolutions3).subscribe(
+     result=>{
+       this.getEvolutionsImage3 = result;
+     }
   )
      
 }
@@ -114,23 +133,13 @@ export class PokeComponent implements OnInit {
          console.log(<any>error);
         }
     );
-    this._petitionsService.getHability(this.pokemonId).subscribe(
-      result =>{
-         this.hability = result;
-      },
-     error =>{
-       console.log(<any>error);
-      }
-  );
 
    }
 
    buscarPokemon(){
     this._petitionsService.getPokemon(this.getEvolutions1).subscribe(
       result =>{
-         this.getEvolutions = result;
-         console.log("EVOLUCION");
-         console.log(this.getEvolutions);
+         this.getEvolutionsImage = result;
       },
      error =>{
        console.log(<any>error);
@@ -144,6 +153,28 @@ export class PokeComponent implements OnInit {
      console.log(<any>error);
     }
 );
+   }
+
+   buscarPokemon2(){
+     this._petitionsService.getPokemon(this.getEvolutions2).subscribe(
+       result =>{
+         this.getEvolutionsImage2 = result;
+       },
+       error =>{
+         console.log(<any>error);
+       }
+     )
+   }
+
+   buscarPokemon3(){
+      this._petitionsService.getPokemon(this.getEvolutions3).subscribe(
+        result =>{
+          this.getEvolutionsImage3 = result;
+        },
+        error =>{
+          console.log(<any>error);
+        }
+      )
    }
 
  

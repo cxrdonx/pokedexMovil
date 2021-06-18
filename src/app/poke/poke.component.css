@@ -28,6 +28,8 @@ html{
 .header-container .search .searchTxt{
     min-width: 50%;
     height: 30px;
+    color: white;
+    
     border-radius: 30px;
     text-align: center;
 
@@ -111,41 +113,46 @@ html{
 }
 
 .item1{
-   font-size: 1.8rem;
+   font-size: 1rem;
    justify-content: center;
-   color: whitesmoke;
-   text-align: center;
+ text-align: center;
+ color: white;
    grid-area: title;
    font-weight: bold;
    max-width: 95%;
-   height: 33px;
+   height: 36px;
    margin-left: -2%;  
    border-radius: 10px 10px 10px 10px;  
 }
+
 .item5{
     width: 90%;
     font-size: 1.2rem;
     grid-area: skill;
+    font-family: 'Noto Sans HK', sans-serif;
 }
 .item3{
-    width: 88%;
+    width: 40%;
    /*   background-color: rgba(218, 216, 216, 0.467); */
       border-radius: 1px 1px 0 0;
+      font-family: 'Noto Sans HK', sans-serif;
       text-align: center;
       grid-area: name;
+      margin-left: 35%;
       font-size: 1.2rem;
-      border-top: 2px solid black;
+      border-top: 2px solid rgb(181, 181, 181);
 }
 .item4{
-   width: 88%;
+     width: 40%;
     /* background-color: rgba(218, 216, 216, 0.467);*/
      border-radius: 1px 1px 0 0;
+     font-family: 'Noto Sans HK', sans-serif;
      margin-bottom: 40px;
      text-align: center;
      grid-area: caracter;
      max-width: 84%;
      font-size: 1.2rem;
-     border-top: 2px solid black;
+     border-top: 2px solid rgb(181, 181, 181);
 }
 
 .pokemon-type--container{
@@ -157,7 +164,6 @@ html{
 .pokemon-type--container .type-container{
 
   margin-bottom: 10px;
-   margin-bottom: 40px;
    text-align: center;
   
 }
@@ -166,6 +172,7 @@ html{
   width: 20%;
   font-size: 1.8rem;
   color: whitesmoke;
+  font-family: 'Noto Sans HK', sans-serif;
   min-width: 288px;
     max-width: 900px;
   margin: 0 auto;
@@ -175,6 +182,7 @@ html{
 .type-container .item9, .item10{
     margin: 10px auto;
     font-size: 1.2rem;
+    font-family: 'Noto Sans HK', sans-serif;
     
 
 }
@@ -196,12 +204,12 @@ html{
     width: 150px;
     height: 150px;
     top: -90px;
-    left: calc(40% - 40px);
+    left: calc(47% - 50px);
    
 }
 
 .evolution-container  .evolution-1, .evolution-2, .evolution-3{
-    margin-bottom: 10px;
+    font-family: 'Noto Sans HK', sans-serif;
     font-size: 1.2rem;
     color: whitesmoke;
 
@@ -245,7 +253,7 @@ html{
        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.evolution-container .evolution-1 .img, .img2, .img3{
+.evolution-container .evolution-1 .img, .img-evolution2, .img-evolution3{
     
     width: 30%;
      
@@ -253,8 +261,15 @@ html{
 
 footer{
     width: 100%;
-    height: 240px;
-    background-color: #1a0739;;
+    height: 130px;
+    background-color: #1a0739;
+    text-align: right;
+}
+footer .paraph{
+    color: white;
+  
+    
+
 }
 
 /*
