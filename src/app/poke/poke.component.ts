@@ -27,6 +27,9 @@ export class PokeComponent implements OnInit {
   public money: any;
  public prueba: any;
  public evolucion: any;
+ 
+ public arr: Array<String> = [];
+ public borrar:any;
 
   constructor(private _petitionsService: PetitionsService){
      this.pokemonId = 1;
@@ -91,17 +94,30 @@ export class PokeComponent implements OnInit {
 
       //TODO ESTO MOVERLO AL COMPONENT.HTML PARA COMPROBAR SI ESTAN VACIOS O NO 
        // O MODIFICAR SOLO LOS CONSOLE.LOG 
-      this.getEvolutions1 = result;
+this.borrar = this.getEvolutions3.chain.species.name;
+   if(this.borrar != null){
+
+   
+     this.getEvolutions3 = result;
+     this.getEvolutions2 = result;
+    
+   }
+
+        this.getEvolutions3 = result;
       this.getEvolutions2 = result;
-      this.getEvolutions3 = result;
-      this.getEvolutions1 = this.getEvolutions1.chain.evolves_to[0].evolves_to[0].species.name;
-      this.getEvolutions2 = this.getEvolutions2.chain.evolves_to[0].species.name;
-      this.getEvolutions3 = this.getEvolutions3.chain.species.name;
-      
+    //    this.getEvolutions1 = result; 
+  //      this.getEvolutions1 = this.getEvolutions1.chain.evolves_to[0].evolves_to[0].species.name;
+        this.getEvolutions2 = this.getEvolutions2.chain.evolves_to[0].species.name;
+       this.getEvolutions3 = this.getEvolutions3.chain.species.name;
         this.seeEvolutions();
-        this.buscarPokemon();
-        this.buscarPokemon2();
-        this.buscarPokemon3();
+       
+        this.arr.push(this.getEvolutions1, this.getEvolutions2, this.getEvolutions3);
+        
+        for(let i in this.arr){
+             console.log(this.arr[i]);
+        }
+
+
     },
   )
     },
@@ -140,6 +156,8 @@ export class PokeComponent implements OnInit {
     this._petitionsService.getPokemon(this.getEvolutions1).subscribe(
       result =>{
          this.getEvolutionsImage = result;
+         console.log("here:::");
+         console.log(this.getEvolutionsImage);
       },
      error =>{
        console.log(<any>error);
@@ -159,6 +177,7 @@ export class PokeComponent implements OnInit {
      this._petitionsService.getPokemon(this.getEvolutions2).subscribe(
        result =>{
          this.getEvolutionsImage2 = result;
+     
        },
        error =>{
          console.log(<any>error);

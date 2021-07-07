@@ -34,6 +34,9 @@
     <div class="item8">Tipo</div>
     <div *ngIf ="pokemon"class="item9">{{pokemon.types[0].type.name}}</div>
     <div *ngIf ="pokemon" class="item10">{{pokemon.types[1].type.name}}</div>
+
+
+<!--
 </div>
     <div class ="evolution-container">
         <img src ="{{pokemon.sprites.back_default}}" class="pokemon-type--icon"/>
@@ -50,8 +53,15 @@
         <div class="evolution-3">
             <p>{{getEvolutions3}}</p>
             <img src="{{getEvolutionsImage3.sprites.other.dream_world.front_default}}" class="img-evolution3"/>
-            </div> 
-            
+            </div>     
+</div>
+-->
+      <div class="evolution-container">
+        <img src ="{{pokemon.sprites.back_default}}" class="pokemon-type--icon"/>
+        <div *ngFor ="let evolutions of arr" class="evolution-1">
+             <p>{{evolutions}}</p>
+        </div>
+      </div>
 </div>
 <footer>
      <p class="paraph">
