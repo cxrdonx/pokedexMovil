@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
+## Clone repository
+Run `git clone https://github.com/cxrdonx/pokedexMovil`
+
+## Install dependencies
+Run `npm install`, and after installation Run the application in local server.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
